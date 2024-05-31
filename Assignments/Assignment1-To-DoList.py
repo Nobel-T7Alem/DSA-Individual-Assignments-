@@ -55,7 +55,7 @@ class ToDoList:
             current = current.next
 
 
-# Testing the implementation
+# Implementation logic
 if __name__ == "__main__":
     todo_list = ToDoList()
 
@@ -73,5 +73,30 @@ if __name__ == "__main__":
     todo_list.markToDoAsCompleted("Task 2")
 
     # Viewing tasks again to see the change
+    print("\nUpdated To-Do List:")
+    todo_list.viewToDoList()
+
+# Demonstration
+if __name__ == "__main__":
+    # Create a new to-do list
+    todo_list = ToDoList()
+
+    # Adding tasks to the to-do list
+    todo_list.addToDo(Task("Buy Groceries", "Buy milk, eggs, and bread from the supermarket"))
+    todo_list.addToDo(Task("Complete Homework", "Finish math and science assignments"))
+    todo_list.addToDo(Task("Call Mom", "Check in with mom and see how she is doing"))
+
+    # Viewing tasks before marking any as completed
+    print("To-Do List:")
+    todo_list.viewToDoList()
+
+    # Marking 'Complete Homework' as completed
+    print("\nMarking 'Complete Homework' as completed.")
+    if todo_list.markToDoAsCompleted("Complete Homework"):
+        print("Task 'Complete Homework' marked as completed.")
+    else:
+        print("Task 'Complete Homework' not found.")
+
+    # Viewing tasks again to see the updated status
     print("\nUpdated To-Do List:")
     todo_list.viewToDoList()
